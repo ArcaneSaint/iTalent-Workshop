@@ -5,7 +5,6 @@ public class PlayerController : MonoBehaviour
 {
 	public float Speed;
 	public float Gravity;
-	public float JumpStrenght;
 	public int player = 1;
 
 	private CharacterController motor { get; set; }
