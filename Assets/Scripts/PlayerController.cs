@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController motor { get; set; }
 	private Camera camera { get; set; }
+    private bool pauze = false;
 
     public GameObject pauseMenu;
 
@@ -57,11 +58,13 @@ public class PlayerController : MonoBehaviour
         {
             togglePause();
         }
-
-        if (Input.GetButtonDown("Fire1_Player"+player))
-		{
-			shoot();
-		}
+        if (!pauze)
+        {
+            if (Input.GetButtonDown("Fire1_Player" + player))
+            {
+                shoot();
+            }
+        }
 
 		var direction = (Input.GetAxis("Horizontal_Player" + player) * transform.right +
 						Input.GetAxis("Vertical_Player" + player) * transform.forward).normalized;
@@ -95,14 +98,14 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1f;
             Cursor.visible = false;
             pauseMenu.SetActive(false);
-            
+            pauze = false;
          }
          else
          {
             Time.timeScale = 0f;
             Cursor.visible = true;
             pauseMenu.SetActive(true);
-            
+            pauze = true;
          }
      }
 }
