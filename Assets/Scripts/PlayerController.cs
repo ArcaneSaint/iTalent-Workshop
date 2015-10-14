@@ -26,9 +26,12 @@ public class PlayerController : MonoBehaviour
 
 	void shoot()
 	{
-		var bullet = (GameObject)Instantiate(Bullet, bulletSpawnPoint.transform.position, transform.rotation);
+		var bullet = (GameObject)Instantiate(Bullet, bulletSpawnPoint.transform.position, camera.transform.rotation);
 		bullet.AddComponent<Rigidbody>();
-		bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(transform.forward * BulletSpeed);
+		bullet.GetComponent<Rigidbody>().velocity = camera.transform.TransformDirection(Vector3.forward * BulletSpeed);
+		
+		
+		
 		//var projectile = new Rigidbody();
 		
 		//GameObject bullet = (GameObject)Instantiate(Resources.Load("Assets/Prefabs/Bullet.prefab"),transform.position,transform.rotation);
@@ -41,8 +44,7 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
-		if (Input.GetButton("Fire1_Player" + player))
+		if(Input.GetButtonDown("Fire1_Player"+player))
 		{
 			shoot();
 		}

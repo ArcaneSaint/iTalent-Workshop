@@ -3,8 +3,6 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour {
 
-	public float LifeTime;
-
 	// Use this for initialization
 	void Start () {
 		
@@ -14,4 +12,10 @@ public class BulletScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		Destroy(gameObject);
+	}
+
 }
