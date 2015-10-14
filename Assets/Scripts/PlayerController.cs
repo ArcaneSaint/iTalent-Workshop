@@ -5,8 +5,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 	public float Speed;
+	public float TurnSpeed;
 	public float Gravity;
 	public int player = 1;
+
 
     private CharacterController motor { get; set; }
 	private Camera camera { get; set; }
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
 	public GameObject bulletSpawnPoint;
 	public GameObject Bullet;
+	public float Cooldown;
 
 	// Use this for initialization
 	void Start()
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour
 	void shoot()
 	{
 		var bullet = (GameObject)Instantiate(Bullet, bulletSpawnPoint.transform.position, camera.transform.rotation);
-		bullet.AddComponent<Rigidbody>();
+		//bullet.AddComponent<Rigidbody>();
 		bullet.GetComponent<Rigidbody>().velocity = camera.transform.TransformDirection(Vector3.forward * BulletSpeed);
 		
 		
@@ -72,8 +75,8 @@ public class PlayerController : MonoBehaviour
 		var rotateX = Input.GetAxis("Rotate_Vertical_Player" + player);
 		var rotateY = Input.GetAxis("Rotate_Horizontal_Player" + player);
 
-		this.transform.Rotate(0, rotateY, 0);
-		camera.transform.Rotate(rotateX, 0, 0);
+		this.transform.Rotate(0, rotateY * Time.deltaTime * TurnSpeed, 0);
+		camera.transform.Rotate(rotateX * Time.deltaTime * TurnSpeed, 0, 0);
 
 		//Fall to the ground when in the air
 		if (!motor.isGrounded)
