@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 	public float Gravity;
 	public int player = 1;
 
-	private CharacterController motor { get; set; }
+	public CharacterController motor { get; set; }
 	private Camera camera { get; set; }
 
 	public float BulletSpeed;
