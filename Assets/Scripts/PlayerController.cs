@@ -10,19 +10,43 @@ public class PlayerController : MonoBehaviour
 	private CharacterController motor { get; set; }
 	private Camera camera { get; set; }
 
+	public float BulletSpeed;
+
+	public GameObject bulletSpawnPoint;
+	public GameObject Bullet;
+
 	// Use this for initialization
 	void Start()
 	{
 		motor = GetComponent<CharacterController>() as CharacterController;
 
 		camera = this.GetComponentInChildren<Camera>() as Camera;
-		
 		//camera = GetComponent<Camera>() as Camera;
+	}
+
+	void shoot()
+	{
+		var bullet = (GameObject)Instantiate(Bullet, bulletSpawnPoint.transform.position, transform.rotation);
+		bullet.AddComponent<Rigidbody>();
+		bullet.GetComponent<Rigidbody>().velocity = transform.TransformDirection(transform.forward * BulletSpeed);
+		//var projectile = new Rigidbody();
+		
+		//GameObject bullet = (GameObject)Instantiate(Resources.Load("Assets/Prefabs/Bullet.prefab"),transform.position,transform.rotation);
+		//bullet.AddComponent<Rigidbody>();
+
+		//(bullet.GetComponent<Rigidbody>() as Rigidbody).velocity = transform.TransformDirection(transform.forward * 20);
+		
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+
+		if (Input.GetButton("Fire1_Player" + player))
+		{
+			shoot();
+		}
+
 		var direction = (Input.GetAxis("Horizontal_Player" + player) * transform.right +
 						Input.GetAxis("Vertical_Player" + player) * transform.forward).normalized;
 
