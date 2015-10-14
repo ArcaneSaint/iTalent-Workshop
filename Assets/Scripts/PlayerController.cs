@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         motor = GetComponent<CharacterController>() as CharacterController;
 
