@@ -16,27 +16,26 @@ public class BulletScript : MonoBehaviour {
 	void Update () {
 		
 	}
-	/*
+	
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Player")
 		{
-			//PlayerController pc = other.gameObject as PlayerController;
-			//pc.Kill();
+			other.gameObject.gameObject.GetComponent<PlayerController>().Kill();
 		}
-	}*/
+		Destroy(gameObject);
+	}
 
 	void OnCollisionEnter(Collision collision)
 	{
-		/*if (collision.contacts.Length > 0)
+		if (collision.contacts.Length > 0)
 		{
 			ContactPoint point = collision.contacts[0];
 
 			var rot = Quaternion.FromToRotation(Vector3.up, point.normal);
 
 			var p = Instantiate(Paint, point.point, rot);
-			
-		}*/
+		}
 		 
 		Destroy(gameObject);
 	}

@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject pauseMenu;
 
+	public AudioClip deathSound;
+
+	public GameObject SpawnPoint;
+
 	public float BulletSpeed;
 
 	public GameObject bulletSpawnPoint;
@@ -30,7 +34,9 @@ public class PlayerController : MonoBehaviour
         motor = GetComponent<CharacterController>() as CharacterController;
 
 		camera = this.GetComponentInChildren<Camera>() as Camera;
-		//camera = GetComponent<Camera>() as Camera;
+
+		transform.position = SpawnPoint.transform.position;
+		//this.transform.position.Set(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z);
 	}
 
 	void shoot()
@@ -50,7 +56,13 @@ public class PlayerController : MonoBehaviour
 		
 	}
 
-   
+	public void Kill()
+	{
+		AudioSource.PlayClipAtPoint(deathSound, transform.position);
+		transform.position = SpawnPoint.transform.position;
+		//transform.position.Set(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y, SpawnPoint.transform.position.z);
+	}
+
 	// Update is called once per frame
 	void Update()
 	{
