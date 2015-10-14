@@ -1,0 +1,136 @@
+fileFormatVersion: 2
+guid: 96bb75a684a1afb4baf7d292d976c84b
+timeCreated: 1444815082
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: arm_lower_L
+    100004: arm_lower_R
+    100006: arm_upper_L
+    100008: arm_upper_R
+    100010: chest
+    100012: Dude
+    100014: Dude_Armature
+    100016: foot_L
+    100018: foot_R
+    100020: footIK_L
+    100022: footIK_R
+    100024: hand_L
+    100026: hand_R
+    100028: head
+    100030: hip
+    100032: pelvis
+    100034: Railgun
+    100036: Railgun_Backup
+    100038: shin_L
+    100040: shin_R
+    100042: spine_lower
+    100044: spine_upper
+    100046: thigh_L
+    100048: thigh_R
+    400000: //RootNode
+    400002: arm_lower_L
+    400004: arm_lower_R
+    400006: arm_upper_L
+    400008: arm_upper_R
+    400010: chest
+    400012: Dude
+    400014: Dude_Armature
+    400016: foot_L
+    400018: foot_R
+    400020: footIK_L
+    400022: footIK_R
+    400024: hand_L
+    400026: hand_R
+    400028: head
+    400030: hip
+    400032: pelvis
+    400034: Railgun
+    400036: Railgun_Backup
+    400038: shin_L
+    400040: shin_R
+    400042: spine_lower
+    400044: spine_upper
+    400046: thigh_L
+    400048: thigh_R
+    2300000: Railgun
+    2300002: Railgun_Backup
+    3300000: Railgun
+    3300002: Railgun_Backup
+    4300000: Railgun_Backup
+    4300002: Dude
+    4300004: Railgun
+    7400000: Default Take
+    7400002: Default
+    7400004: Idle
+    7400006: Land
+    7400008: Recoil
+    7400010: Run
+    7400012: Shoot
+    7400014: Walk
+    9500000: //RootNode
+    13700000: Dude
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
