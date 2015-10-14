@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class PlayerController : MonoBehaviour
 	public float Gravity;
 	public int player = 1;
 
-	private CharacterController motor { get; set; }
+    private CharacterController motor { get; set; }
 	private Camera camera { get; set; }
+
+    public GameObject pauseMenu;
 
 	public float BulletSpeed;
 
@@ -18,7 +21,8 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		motor = GetComponent<CharacterController>() as CharacterController;
+        pauseMenu.SetActive(false);
+        motor = GetComponent<CharacterController>() as CharacterController;
 
 		camera = this.GetComponentInChildren<Camera>() as Camera;
 		//camera = GetComponent<Camera>() as Camera;
@@ -41,10 +45,16 @@ public class PlayerController : MonoBehaviour
 		
 	}
 
+   
 	// Update is called once per frame
 	void Update()
 	{
-		if(Input.GetButtonDown("Fire1_Player"+player))
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            togglePause();
+        }
+
+        if (Input.GetButtonDown("Fire1_Player"+player))
 		{
 			shoot();
 		}
@@ -70,5 +80,25 @@ public class PlayerController : MonoBehaviour
 		{
 			motor.Move(new Vector3(0, -1*Gravity*Time.deltaTime, 0));
 		}
+
+
 	}
+     
+      public void togglePause()
+     {
+         if(Time.timeScale == 0f)
+         {
+            Time.timeScale = 1f;
+            Cursor.visible = false;
+            pauseMenu.SetActive(false);
+            
+         }
+         else
+         {
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            pauseMenu.SetActive(true);
+            
+         }
+     }
 }
