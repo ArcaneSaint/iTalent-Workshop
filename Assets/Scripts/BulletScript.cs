@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour {
 
+	public GameObject splatter;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,8 +15,16 @@ public class BulletScript : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnCollisionEnter(Collision collision)
 	{
+		//(other as GameObject)
+		if (collision.contacts.Length > 0)
+		{
+			Debug.Log("Testing");
+			ContactPoint point = collision.contacts[0];
+			Instantiate(splatter);
+			splatter.transform.position = point.point;
+		}
 		Destroy(gameObject);
 	}
 

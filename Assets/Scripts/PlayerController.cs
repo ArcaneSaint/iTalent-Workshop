@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 	void shoot()
 	{
 		var bullet = (GameObject)Instantiate(Bullet, bulletSpawnPoint.transform.position, camera.transform.rotation);
-		bullet.AddComponent<Rigidbody>();
+		//bullet.AddComponent<Rigidbody>();
 		bullet.GetComponent<Rigidbody>().velocity = camera.transform.TransformDirection(Vector3.forward * BulletSpeed);
 		
 		
