@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 	void Start()
 	{
         Cursor.visible = false;
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
         motor = GetComponent<CharacterController>() as CharacterController;
 
 		camera = this.GetComponentInChildren<Camera>() as Camera;
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
      
       public void togglePause()
      {
-         if(Time.timeScale == 0f)
+         if(pauze)
          {
             Time.timeScale = 1f;
             Cursor.visible = false;
