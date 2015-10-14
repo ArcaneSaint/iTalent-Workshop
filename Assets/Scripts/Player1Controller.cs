@@ -19,16 +19,24 @@ public class Player1Controller : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		var direction = new Vector3(
+		var move = new Vector3(
 				Input.GetAxis("Horizontal_Player" + player),
 				0,
 				Input.GetAxis("Vertical_Player" + player)
 			);
 		motor.Move(new Vector3(
-				direction.x * Speed,
+				move.x * Speed,
 				0,
-				direction.z * Speed) * Time.deltaTime
+				move.z * Speed) * Time.deltaTime
 			);
+
+
+		var rotate = new Vector3(
+				Input.GetAxis("Rotate_Horizontal_Player"+player),
+				0,
+				Input.GetAxis("Rotate_Horizontal_Player"+player)
+				);
+
 
 
 		//Fall to the ground when in the air
