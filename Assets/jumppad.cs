@@ -16,8 +16,9 @@ public class jumppad : MonoBehaviour {
 
 			CharacterController A = (CharacterController)other;
 			
+			A.transform.forward = - this.transform.forward;
 
-			A.Move(new Vector3(0,20,-10));
+			//A.Move(new Vector3(0,20,-10));
 			print ("Collision by: "+other.GetType().ToString()+"  ... End of text");
 
 		}
